@@ -16,5 +16,80 @@ limpar tela
 editor de texto termianal (é bom criar um novo) ele vai apagar o conteudo do anterior
 -> nano -nome_do_arquivo_.txt
 
-mostrar conteúdo de 
+mostrar conteúdo de texto
+-> cat -nome_do_arquivo_.txt
+
+mudar nome de qrquivo ou pasta ou mover
+-> mv -pasta/arquivo velho- -novo arquivo ou pasta-
+
+mostrar conteúdo do diretório
+-> ls (mac) dir(windowns) -> ls -a (mostra os arquivos ocultos com ponto na frente)
+
+verificar qual a versão do git instalada
+-> git --version
+
+criar repositório (dentro da pasta que se quer criar)
+-> git init
+
+verificação da situação dos arquivos do repositório (no stage ou comitado)
+-> git status
+
+para colocar no stage ou trackear o arquivo 
+-> git add -nome do arquivo- 
+-> git add . (trackeia todo os arquivos)
+
+para voltar do stage (retirar)
+-> git rm --cached <nome do arquivo>
+
+para comitar com a mensagem 
+-> git commit -m "mensagem"
+
+para verificar o histórico de commits
+-> git log
+-> git log --oneline (foma condensada do histórico)
+
+para comitar direto juntando dois comandos
+-> git add . && git commit -m "mensagem"
+
+para voltar a determinado commit ou branch (para dar uma olhada)
+-> git checkout <numero do commit> (volta ao passado)
+-> git checkout master(main) volta ao presente
+
+para reverter o trabalho de um determinado  commit
+-> git revert <numero do commit>
+
+para voltar um determinado commit e deletar todos os posteriores
+-> git reset <numero do commit> (porém algumas alterações permanecem e perdece os log dos comites posteriores)
+-> git reset <numero do commit> --hard (deleta tudo pra frente)
+
+para ignorar arquivos que não podem ser mudados (tipo o .inv)
+a gente passa para o git não rastrear esse arquivo
+o arquivo (touch .gitignore) tudo que é colocado lá dentro não será rastreado pelo git
+pode-se ignorar também pastas, colocando onome delas dentro do arquivo .gitignore
+-> touch .gitignore
+-> git add . && git commit "Adicionado gitignore"
+
+criando branch
+-> git branch (lista todos os branchs existentes)
+-> git branch <nome> (cria um branch no branch existente - se estiver no master cria um branch a partir daí)
+-> git checkout <branch> muda de branch
+
+deletando branch
+-> git branch -d <nome> (caso o brach não foi realizado 'merge' ele não deixa)
+-> git branch -D <nome> (deleta independente de merge)
+
+fundir branchs ir para o branch destino
+-> git checkout <branch destino> normalmente o master/main
+-> git merge <branch origem a ser fundido> 
+
+conflito no merge
+pode resolver manualmente e depois stage e commit sem precisar de comentário
+
+push para o github
+-> git push <endereço do repositorio do github>
+
+
+
+
+
 
