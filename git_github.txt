@@ -9,6 +9,7 @@ leletar um arquivo
 
 deletar uma pasta
 -> rmdir -pasta-
+-> rm -rf <pasta> deleta pasta mesmo ela estando com arquivos
 
 limpar tela
 -> clear (mac) cls(windowns)
@@ -86,7 +87,21 @@ conflito no merge
 pode resolver manualmente e depois stage e commit sem precisar de comentário
 
 push para o github
--> git push <endereço do repositorio do github>
+-> git push <endereço do repositorio do github> <nome do branch>
+
+para não precisar colocar o endereço toda a hora criar um alias
+-> git remote add origin <endereço do repositorio do git hub>
+-> git remote -v ( mostra se o origin esta funcionando)
+
+para dar push com o origin
+-> git push origin <branch>
+
+se criar o repositorio direto do github antes de ter as pastas o gitignore são criadas automaticamentes
+deve só colocar com o temp´late escolhido pode ser o visual studio
+para colar o repositório no computador pessoal deve-se clonar e na pasta anterior pois le criar uma pasta automaticamente
+-> git clone <nome do repositorio do github (pagina web)> <nome do repositorio(opcional)>
+
+
 
 
 
