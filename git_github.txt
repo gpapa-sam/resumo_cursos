@@ -1,0 +1,20 @@
+criar um arquivo
+-> touch -test.txt-
+
+criar uma pasta
+-> mkdir -pasta-
+
+leletar um arquivo
+-> rm -arquivo-
+
+deletar uma pasta
+-> rmdir -pasta-
+
+limpar tela
+-> clear (mac) cls(windowns)
+
+editor de texto termianal (é bom criar um novo) ele vai apagar o conteudo do anterior
+-> nano -nome_do_arquivo_.txt
+
+mostrar conteúdo de 
+
