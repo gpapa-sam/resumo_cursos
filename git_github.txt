@@ -44,6 +44,7 @@ para voltar do stage (retirar)
 
 para comitar com a mensagem 
 -> git commit -m "mensagem"
+-> git commit -m "mesagem" --author="Fulano<fulano@fulano.com"
 
 para verificar o histórico de commits
 -> git log
@@ -75,6 +76,9 @@ criando branch
 -> git branch <nome> (cria um branch no branch existente - se estiver no master cria um branch a partir daí)
 -> git checkout <branch> muda de branch
 
+criar branch e faz o checkout automático
+-> git checkout -b <new_branch>
+
 deletando branch
 -> git branch -d <nome> (caso o brach não foi realizado 'merge' ele não deixa)
 -> git branch -D <nome> (deleta independente de merge)
@@ -100,6 +104,18 @@ se criar o repositorio direto do github antes de ter as pastas o gitignore são 
 deve só colocar com o temp´late escolhido pode ser o visual studio
 para colar o repositório no computador pessoal deve-se clonar e na pasta anterior pois le criar uma pasta automaticamente
 -> git clone <nome do repositorio do github (pagina web)> <nome do repositorio(opcional)>
+
+para dar pull de arquivos do github
+-> git pull origin (nome do arquivo) <branch>:
+
+para contribuir com outros repositórios
+só fazer um fork, que uma cópia do repositório irá para os eu github e vc pode mexer a vontade 
+-> fork
+assim que estiver satisfeito faça um pull request para passar para o dono original do repositório
+que poderá fazer um merge para o principal
+-> pullrequest (depois de ter feito a contribuição)
+
+
 
 
 
