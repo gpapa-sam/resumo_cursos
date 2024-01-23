@@ -41,28 +41,60 @@ para colocar no stage ou trackear o arquivo
 
 para voltar do stage (retirar)
 -> git rm --cached <nome do arquivo>
+para deletar um arquivo e coloca-lo no repositório como deletando
+-> git rm <nome do arquivo>
 
 para comitar com a mensagem 
 -> git commit -m "mensagem"
 -> git commit -m "mesagem" --author="Fulano<fulano@fulano.com"
 
+para comitar direto juntando dois comandos
+-> git add . && git commit -m "mensagem"
+
+para comitar, sem precisar do add, atualização de arquivos (só vale para arquivos já comitados e que serão atualizados)
+-> git commit -a -m "mensagem"
+-> git commit -am "mensagem"
+
 para verificar o histórico de commits
 -> git log
 -> git log --oneline (foma condensada do histórico)
+-> git log -n 2 (apenas os dois últimos commits)
+-> git log --stat (para verificar as alterações feitas nos commits)
+* pode ser feitas combinações entre as tags ex: git log -n 2 --oneline --stat (dois ultimos commits resumido em um linha mostrando as alterações)
 
-para comitar direto juntando dois comandos
--> git add . && git commit -m "mensagem"
+verificar mudanças não rastreadas (deve estar salvas mas não no stage sem add)
+-> git diff (mostra onde foi feitas as alterações)
+-> git diff <arquivo> (caso queira ver alterações em um arquivo específico)
+mudanças rastreadas (com add)
+-> git diff --staged
+-> git diff <código commit> ou git diff master (mostra as alterações com e sem o stage(add))
+mudanças já comitadas
+-> git diff <código commit anterior>..<código commit posterior> (mostra as alterações entre um e outro commit conforme especificado)
+-> git diff <código commit>~2 (mostra as alterçõe a quantidade anterior conforme o número inserido) mostra comitados e não comitados
+
+renomear arquivos 
+-> git mv <nome do arquivo> <novo nome do arquivo> será rastreado (commitado)
+movendo arquivos entre diretórios dentro do repositório
+-> git mv <nome do arquivo> <pasta/nome do arquivo> (a pasta deve ser criada antes)
 
 para voltar a determinado commit ou branch (para dar uma olhada)
 -> git checkout <numero do commit> (volta ao passado)
 -> git checkout master(main) volta ao presente
 
-para reverter o trabalho de um determinado  commit
+para desfazer alterações que não foram stageadas (rastreadas com add) ou recuperar arquivo deletado acidentalmente
+-> git checkout <nome do arquvo>'
+
+para reverter o trabalho de um determinado  commit ou bug
 -> git revert <numero do commit>
+para reverter mudanças do ultimo commit sem precisar editar a mensagem
+-> git revert -- no-edit <codigo do último commit ou master(main)>
 
 para voltar um determinado commit e deletar todos os posteriores
--> git reset <numero do commit> (porém algumas alterações permanecem e perdece os log dos comites posteriores)
+-> git reset <numero do commit> (porém algumas alterações permanecem e perde os log dos comites posteriores)
 -> git reset <numero do commit> --hard (deleta tudo pra frente)
+
+para refazer uma mudança já rastreadas mas não comitadas (tirar as alterações do stage)
+-> git reset -- <nome do arquivo> (as alterações permanecem, porém fora do stage)
 
 para ignorar arquivos que não podem ser mudados (tipo o .inv)
 a gente passa para o git não rastrear esse arquivo
