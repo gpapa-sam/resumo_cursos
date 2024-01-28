@@ -41,7 +41,7 @@ para colocar no stage ou trackear o arquivo
 
 para voltar do stage (retirar)
 -> git rm --cached <nome do arquivo>
-para deletar um arquivo e coloca-lo no repositório como deletando
+para deletar um arquivo e coloca-lo no repositório como deletado
 -> git rm <nome do arquivo>
 
 para comitar com a mensagem 
@@ -61,6 +61,9 @@ para verificar o histórico de commits
 -> git log -n 2 (apenas os dois últimos commits)
 -> git log --stat (para verificar as alterações feitas nos commits)
 * pode ser feitas combinações entre as tags ex: git log -n 2 --oneline --stat (dois ultimos commits resumido em um linha mostrando as alterações)
+
+Para verificar uma relação de commits com seus pais(anteriores) e para onde eles apontam
+-> git log --oneline --decorate --parents (vai ter 3 colunas o num commits / pai / descrição do commit)
 
 verificar mudanças não rastreadas (deve estar salvas mas não no stage sem add)
 -> git diff (mostra onde foi feitas as alterações)
@@ -108,6 +111,9 @@ criando branch
 -> git branch <nome> (cria um branch no branch existente - se estiver no master cria um branch a partir daí)
 -> git checkout <branch> muda de branch
 
+listando branch com commits associados
+-> git branch -v
+
 criar branch e faz o checkout automático
 -> git checkout -b <new_branch>
 
@@ -117,7 +123,17 @@ deletando branch
 
 fundir branchs ir para o branch destino
 -> git checkout <branch destino> normalmente o master/main
--> git merge <branch origem a ser fundido> 
+-> git merge <branch origem a ser fundido>
+-> git merge <branch origem a ser fundido> -m "mensagem"
+
+O commit no master volta a criação de um branch para evitar um merge na frente.
+nesse sentido, o master aponta para o commit feito no branch
+m1 <- m2 <- b1 <- m3 <- master
+       ^- alterção (m3)
+-> git rebase <branch a ser fundido>
+
+verificando branches ainda não mescladas (merges)git 
+-> git branch --no-merged
 
 conflito no merge
 pode resolver manualmente e depois stage e commit sem precisar de comentário
