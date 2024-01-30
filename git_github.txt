@@ -111,8 +111,19 @@ criando branch
 -> git branch <nome> (cria um branch no branch existente - se estiver no master cria um branch a partir daí)
 -> git checkout <branch> muda de branch
 
+Quando clonamos um repositório o github manda só o branch solicitado(no caso o master) os outros permanecem lá.
+-> git branch -a -v (mostra as branches do github-remotas- e as locais)
+-> git checkout -b <branch> origin/<branch> (pegar uma branch no github de um repositório master que estivermos trabalhando)
+essas branches locais criadas a partir de branches remostas sõa chamadas de "tracking branches"
+-> git checkout -t origin/<branch> - também clona e cria uma "tracking branches"
+
 listando branch com commits associados
 -> git branch -v
+
+listando branches remotas (github)
+-> git branch -r
+-> git branch -r -a (informa qual o commit as branches remotas apontam)
+-> git branch -a (lista remotas e locais)
 
 criar branch e faz o checkout automático
 -> git checkout -b <new_branch>
@@ -121,10 +132,16 @@ deletando branch
 -> git branch -d <nome> (caso o brach não foi realizado 'merge' ele não deixa)
 -> git branch -D <nome> (deleta independente de merge)
 
+para remover uma branch no github do terminal local
+-> git push origin :<nome da branch>
+
 fundir branchs ir para o branch destino
 -> git checkout <branch destino> normalmente o master/main
 -> git merge <branch origem a ser fundido>
 -> git merge <branch origem a ser fundido> -m "mensagem"
+
+trazendo commit de um repositorio remoto (sincronizando)
+-> git fetch origin 
 
 O commit no master volta a criação de um branch para evitar um merge na frente.
 nesse sentido, o master aponta para o commit feito no branch
