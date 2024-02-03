@@ -155,6 +155,30 @@ verificando branches ainda não mescladas (merges)git
 conflito no merge
 pode resolver manualmente e depois stage e commit sem precisar de comentário
 
+criando tags
+-> git tag <nome tag> (ex: v1.0)
+
+criando tag em commit passados
+-> git tag <nome> <numero commit>
+
+listar tags
+-> git tag
+
+deletando tags
+-> git tag -d <nome tag>
+
+criando tag anotadas
+-> git tag -a <nome da tag> -m "mensagem resumida"
+
+exibir informações de uma tag anotada
+-> git show -s <nome da tag>
+o comando acima "show" serve para inspecionar commits
+
+Tags ficam disponíveis somente no repositório local
+para compartir com a equipe e subir para o github
+-> git push origin <nome da tag>
+-> git push origin --tag (envia todas as tag criadas no repositório)
+
 push para o github
 -> git push <endereço do repositorio do github> <nome do branch>
 
