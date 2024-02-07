@@ -1,0 +1,8 @@
+- linha de uma matriz (tabela) chamada de registro ou tupla
+- coluna chamado de campo
+visualizar tabelas dentro de um projeto (banco de tdados)
+-> show tables;
+
+para mostrar a tabela
+-> desc <nome da tabela>;
+

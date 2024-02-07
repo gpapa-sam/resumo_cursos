@@ -140,6 +140,9 @@ fundir branchs ir para o branch destino
 -> git merge <branch origem a ser fundido>
 -> git merge <branch origem a ser fundido> -m "mensagem"
 
+invocar uma feramenta para resolver conflitos de merge
+-> git mergetool
+
 trazendo commit de um repositorio remoto (sincronizando)
 -> git fetch origin 
 
@@ -203,6 +206,7 @@ só fazer um fork, que uma cópia do repositório irá para os eu github e vc po
 assim que estiver satisfeito faça um pull request para passar para o dono original do repositório
 que poderá fazer um merge para o principal
 -> pullrequest (depois de ter feito a contribuição)
+
 
 
 
